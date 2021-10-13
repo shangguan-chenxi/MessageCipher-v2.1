@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeAuthCode">
+
+    <Button
+        android:id="@+id/btnBack2"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:text="返回"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:backgroundTint="#3F51B5"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtOldAuthCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="原口令"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/txtNewAuthCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="新口令"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtOldAuthCode"
+        app:layout_constraintStart_toStartOf="@+id/txtOldAuthCode"
+        app:layout_constraintTop_toBottomOf="@+id/txtOldAuthCode" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="清空"
+        app:backgroundTint="#F06292"
+        app:layout_constraintBottom_toBottomOf="@+id/btnExit"
+        app:layout_constraintEnd_toEndOf="@+id/txtReNewAuthCode"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnExit"
+        app:layout_constraintTop_toTopOf="@+id/btnExit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="退出程序"
+        android:textSize="12sp"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintStart_toStartOf="@+id/txtReNewAuthCode"
+        app:layout_constraintTop_toBottomOf="@+id/txtReNewAuthCode" />
+
+    <EditText
+        android:id="@+id/txtReNewAuthCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="校验新口令"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtNewAuthCode"
+        app:layout_constraintStart_toStartOf="@+id/txtNewAuthCode"
+        app:layout_constraintTop_toBottomOf="@+id/txtNewAuthCode" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="修改口令"
+        android:textColor="#2392EC"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prompt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="注意：修改口令成功后您需要重新验证以继续使用 "
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/btnChange"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnChange"
+        app:layout_constraintTop_toBottomOf="@+id/btnChange" />
+
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="修改"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintEnd_toEndOf="@+id/btnClear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnExit"
+        app:layout_constraintTop_toBottomOf="@+id/btnExit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

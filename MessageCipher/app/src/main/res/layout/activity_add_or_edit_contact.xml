@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddOrEditContact">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:text="返回"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:backgroundTint="#3F51B5"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtContactName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="联系人名称"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="添加/编辑 联系人"
+        android:textColor="#2392EC"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtAESPwd"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="通讯密钥(16/24/32个字符长度)"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txtContactName"
+        app:layout_constraintStart_toStartOf="@+id/txtContactName"
+        app:layout_constraintTop_toBottomOf="@+id/txtContactName" />
+
+    <Button
+        android:id="@+id/btnGenKeys"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="生成密钥"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintBottom_toBottomOf="@+id/txtUrPriKey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtUrPubKey" />
+
+    <EditText
+        android:id="@+id/txtUrPubKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity='top'
+        android:hint="己方RSA公钥"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/btnGenKeys"
+        app:layout_constraintStart_toStartOf="@+id/txtAESPwd"
+        app:layout_constraintTop_toBottomOf="@+id/txtAESPwd" />
+
+    <Button
+        android:id="@+id/btnCopyUrPubKey"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="复制公钥"
+        android:textSize="12sp"
+        app:backgroundTint="#9CCC65"
+        app:layout_constraintBottom_toBottomOf="@+id/txtUrPubKey"
+        app:layout_constraintEnd_toEndOf="@+id/txtUrPubKey"
+        app:layout_constraintTop_toTopOf="@+id/txtUrPubKey"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/txtUrPriKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:editable="false"
+        android:ems="10"
+        android:gravity='top'
+        android:hint="己方RSA私钥"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/btnGenKeys"
+        app:layout_constraintStart_toStartOf="@+id/txtUrPubKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrPubKey" />
+
+    <EditText
+        android:id="@+id/txtOppPubKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:gravity='top'
+        android:hint="对方RSA公钥"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/btnGenKeys"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtUrPriKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrPriKey" />
+
+    <Button
+        android:id="@+id/btnPasteOppPubKey"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:text="粘贴公钥"
+        android:textSize="12sp"
+        app:backgroundTint="#4DB6AC"
+        app:layout_constraintBottom_toBottomOf="@+id/txtOppPubKey"
+        app:layout_constraintEnd_toEndOf="@+id/txtOppPubKey"
+        app:layout_constraintTop_toTopOf="@+id/txtOppPubKey" />
+
+    <EditText
+        android:id="@+id/txtEncryptedTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity='top'
+        android:hint="双方用于交换通讯密钥的密文"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/textViewHint"
+        app:layout_constraintEnd_toEndOf="@+id/txtOppPubKey"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtOppPubKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtOppPubKey"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnClearEncryptedTxt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="x"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/txtEncryptedTxt"
+        app:layout_constraintTop_toTopOf="@+id/txtEncryptedTxt" />
+
+    <Button
+        android:id="@+id/btnCopyEncryptedTxt"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="复制密文"
+        android:textSize="12sp"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPasteEncryptedTxt"
+        app:layout_constraintEnd_toStartOf="@+id/btnPasteEncryptedTxt" />
+
+    <Button
+        android:id="@+id/btnPasteEncryptedTxt"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="粘贴密文"
+        android:textSize="12sp"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEncryptedTxt"
+        app:layout_constraintEnd_toEndOf="@+id/txtEncryptedTxt" />
+
+    <Button
+        android:id="@+id/btnGenCipherText"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="生成通讯密钥密文"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintBottom_toTopOf="@+id/btnDecCipherText"
+        app:layout_constraintEnd_toEndOf="@+id/btnDecCipherText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnDecCipherText" />
+
+    <Button
+        android:id="@+id/btnDecCipherText"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="解密通讯密钥密文"
+        android:textSize="12sp"
+        app:backgroundTint="#E91E63"
+        app:layout_constraintBottom_toTopOf="@+id/btnPasteEncryptedTxt"
+        app:layout_constraintEnd_toEndOf="@+id/btnPasteEncryptedTxt"
+        app:layout_constraintStart_toStartOf="@+id/btnCopyEncryptedTxt" />
+
+    <Button
+        android:id="@+id/btnPurgeAll"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="清空"
+        android:textSize="12sp"
+        app:backgroundTint="#303F9F"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSaveContact"
+        app:layout_constraintStart_toEndOf="@+id/btnExitProgram" />
+
+    <Button
+        android:id="@+id/btnSaveContact"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="保存"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtEncryptedTxt"
+        app:layout_constraintStart_toEndOf="@+id/btnPurgeAll" />
+
+    <Button
+        android:id="@+id/btnGenRandAesPwd"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="随机密码"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAESPwd"
+        app:layout_constraintEnd_toEndOf="@+id/txtAESPwd"
+        app:layout_constraintTop_toTopOf="@+id/txtAESPwd"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnExitProgram"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:text="退出程序"
+        android:textSize="12sp"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtEncryptedTxt" />
+
+    <TextView
+        android:id="@+id/textViewHint"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveContact"
+        app:layout_constraintEnd_toEndOf="@+id/txtEncryptedTxt"
+        app:layout_constraintStart_toStartOf="@+id/txtEncryptedTxt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnBack3"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:text="返回"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:backgroundTint="#3F51B5"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/plainText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="明文"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnEncrypt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContact" />
+
+    <Button
+        android:id="@+id/btnEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="加密->复制"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toTopOf="@+id/encryptedText"
+        app:layout_constraintEnd_toEndOf="@+id/plainText" />
+
+    <Button
+        android:id="@+id/btnDelPlainTxt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:text="X"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/plainText"
+        app:layout_constraintEnd_toEndOf="@+id/plainText" />
+
+    <Button
+        android:id="@+id/btnPurgeAll"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="清空"
+        app:backgroundTint="#303F9F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/encryptedText"
+        app:layout_constraintStart_toEndOf="@+id/btnExitNow" />
+
+    <Button
+        android:id="@+id/btnExitNow"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:text="退出程序"
+        android:textSize="12sp"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPurgeAll"
+        app:layout_constraintStart_toStartOf="@+id/encryptedText"
+        app:layout_constraintTop_toTopOf="@+id/btnPurgeAll" />
+
+    <Button
+        android:id="@+id/btnDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="解密"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/encryptedText"
+        app:layout_constraintEnd_toStartOf="@+id/btnPasteEncryptedTxt" />
+
+    <Button
+        android:id="@+id/btnPasteEncryptedTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="粘贴->解密"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDecrypt"
+        app:layout_constraintEnd_toEndOf="@+id/encryptedText" />
+
+    <Button
+        android:id="@+id/butDelEncryptedTxt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/encryptedText"
+        app:layout_constraintTop_toTopOf="@+id/encryptedText" />
+
+    <EditText
+        android:id="@+id/encryptedText"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity='top'
+        android:hint="密文"
+        android:inputType="textMultiLine|textPersonName"
+        android:singleLine="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnPurgeAll"
+        app:layout_constraintEnd_toEndOf="@+id/btnEncrypt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewPrompt" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="联系人"
+        android:textColor="#2392EC"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textViewPrompt"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEncrypt"
+        app:layout_constraintEnd_toStartOf="@+id/btnEncrypt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/plainText"
+        app:layout_constraintTop_toTopOf="@+id/btnEncrypt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
